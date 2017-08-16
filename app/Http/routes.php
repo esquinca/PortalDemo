@@ -14,3 +14,6 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/test', 'LoginProcessController@index');
+Route::post('/ACM1PT', 'LoginProcessController@test');
