@@ -24,10 +24,10 @@ return [
     | stack traces will be shown on every error that occurs within your
     | application. If disabled, a simple generic error page is shown.
     |
+    'debug' => env('APP_DEBUG', false),
     */
 
-    'debug' => env('APP_DEBUG', false),
-
+    'debug' => true,
     /*
     |--------------------------------------------------------------------------
     | Application URL
