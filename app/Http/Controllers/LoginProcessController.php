@@ -17,17 +17,20 @@ class LoginProcessController extends Controller
 
 		$client = new GuzzleHttpClient();
 
-		$response = $client->request('POST', 'http://localhost:8000/ACM1PT', [
-			'form_params' => [
-				'field1' => 'prueba1',
-				'field2' => 'prueba 2'
-			]
-		]);
-
-
-		} catch (RequestException $re) {
-		      //For handling exception
+    $response = $client->request('POST', 'http://httpbin.org/post', [
+        'form_params' => [
+            'field_name' => 'abc',
+            'other_field' => '123',
+            'nested_field' => [
+                'nested' => 'hello'
+            ]
+        ]
+    ]);
+        var_dump($response->$field_name);
 		}
+        catch (RequestException $re) {
+		      //For handling exception
+		  }
 
     }
 

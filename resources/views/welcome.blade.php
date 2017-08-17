@@ -37,6 +37,16 @@
                           <p class="text-muted m-b-30"> Bootstrap Form Validation</p>
                           <form data-toggle="validator">
                               <div class="form-group">
+                                <input type="text" class="form-control" id="sip" name="sip" value="<?php echo $_GET['sip']; ?>" />
+                          			<input type="text" class="form-control" id="mac" name="mac" value="<?php echo $_GET['mac']; ?>" />
+                          			<input type="text" class="form-control" id="client_mac" name="client_mac" value="<?php echo $_GET['client_mac']; ?>" />
+                          			<input type="text" class="form-control" id="uip" name="uip" value="<?php echo $_GET['uip']; ?>"  />
+                          			<input type="text" class="form-control" id="ssid" name="ssid" value="<?php echo $_GET['ssid']; ?>"  />
+                          			<input type="text" class="form-control" id="vlan" name="vlan" value="<?php echo $_GET['vlan']; ?>"  />
+                          			<input type="text" class="form-control" id="res" name="res" value="<?php echo $_GET['res']; ?>">
+                          			<input type="text" class="form-control" id="auth" name="auth" value="<?php echo $_GET['auth']; ?>"> -->
+                              </div>
+                              <div class="form-group">
                                   <label for="inputEmail" class="control-label">Email</label>
                                   <input type="email" class="form-control" id="inputEmail" placeholder="Email" data-error="Bruh, that email address is invalid" required>
                                   <div class="help-block with-errors"></div>
