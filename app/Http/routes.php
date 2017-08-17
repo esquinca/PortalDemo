@@ -15,5 +15,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/test', 'LoginProcessController@index');
-Route::post('/ACM1PT', 'LoginProcessController@test');
+Route::post('/submit_inputs', 'LoginProcessController@index');
+
+Route::post('/ACM1PT', 'TestController@test');

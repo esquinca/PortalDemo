@@ -11,31 +11,51 @@ use GuzzleHttp\Exception\RequestException;
 
 class LoginProcessController extends Controller
 {
-    public function index()
+	public function index(Request $request)
+	{
+		$sip = $request->sip;
+    	$mac = $request->mac;
+    	$client_mac = $request->client_mac;
+    	$uip = $request->uip;
+    	$ssid = $request->ssid;
+    	$vlan = $request->vlan;
+
+    	echo "OK";
+	}
+
+    public function testing(Request $request)
     {
+
+    	$sip = $request->sip;
+    	$mac = $request->mac;
+    	$client_mac = $request->client_mac;
+    	$uip = $request->uip;
+    	$ssid = $request->ssid;
+    	$vlan = $request->vlan;
+
+    	echo $sip . " " . $mac . " " . $client_mac . " " . $uip;
+
+    	$client = new GuzzleHttpClient();
+
 		try {
 
-		$client = new GuzzleHttpClient();
-
-		$response = $client->request('POST', 'http://localhost:8000/ACM1PT', [
+		$response = $client->request('POST', 'http://172.200.0.2:9997/login', [
 			'form_params' => [
-				'field1' => 'prueba1',
-				'field2' => 'prueba 2'
+				'username' => 'GUESTOMR',
+				'password' => '123',
+				'sip' => $sip,
+				'mac' => $mac,
+				'client_mac' => $client_mac,
+				'uip' => $uip,
+				'ssid' => $ssid,
+				'vlan' => $vlan
 			]
 		]);
-
-
 		} catch (RequestException $re) {
-		      //For handling exception
+			//echo $re;
 		}
 
     }
 
-    public function test(Request $request)
-    {
-    	$msg1 = $request->field1;
-    	$msg2 = $request->field2;
 
-    	echo $msg1 . " ~~ " . $msg2;
-    }
 }
